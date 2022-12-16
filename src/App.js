@@ -18,7 +18,7 @@ const [expenses, setExpenses] = useState(initialExpenses);
 
   return <>
   <Alert />
-    <h1>budget calculator</h1>
+    <h1>budget calculator 2</h1>
     <main className='App'>
   <ExpenseForm />
   <ExpenseList expenses={expenses}/>
