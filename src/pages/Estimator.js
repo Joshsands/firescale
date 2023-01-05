@@ -1,9 +1,11 @@
 import * as React from "react";
+import Estimatortool from '../components/Estimatortool';
+
 
 const Pricing = () => {
   return (
     <div>
-      THIS IS THE ESTIMATOR PAGE
+      <Estimatortool />
     </div>
   );
 };
