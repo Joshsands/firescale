@@ -17,9 +17,10 @@ const Navigation = () => {
             <Nav className="mb-0">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
               <Nav.Link as={Link} to="/shop">Shop</Nav.Link>
-              <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
+              <Nav.Link as={Link} to="/Estimator">Estimator</Nav.Link>
               <Nav.Link as={Link} to="/Service">Service</Nav.Link>
               <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+              <Nav.Link as={Link} to="/login">Login</Nav.Link>
             </Nav>
             <Navbar.Brand  as={Link} to="/">PRIMARY FIRE PROTECTION</Navbar.Brand>
           </Container>
