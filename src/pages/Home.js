@@ -3,6 +3,7 @@ import robImage from "../assets/images/roblippman.jpg";
 import joshimage from "../assets/images/joshsands.jpg";
 import stephenimage from "../assets/images/stephenfuller.jpg";
 import briimage from "../assets/images/bri.jpg";
+import { ListGroup } from "react-bootstrap";
 
 const Home = () => {
   return (
@@ -67,22 +68,41 @@ const Home = () => {
         </div>
         <div class="flex-row">
           <p>
-            At Primary Fire Protection, our goal is to ensure safety of both
-            your occupants and property. Our fire protection/ life safety
+            <ListGroup>
+
+            <ListGroup.Item className="text-danger">At Primary Fire Protection, our goal is to ensure safety of both
+            your occupants and property. Our fire protection / life safety
             contracting delivers the highest quality control standards by
             continuously investing in our technicians' knowledge and skill sets.
+            </ListGroup.Item>
+
+            <ListGroup.Item className="text-danger">
             Our first-rate, trade specific, expertise delivers our clients peace
             of mind knowing our products will save lives and property as they
-            were designed. Our clients experience minimal
+            were designed.
+            </ListGroup.Item>
+
+            <ListGroup.Item className="text-danger">
+            Our clients experience minimal
             installation/inspection downtimes, and lower overall labor costs
-            delivering our customers the best possible value. Our protective
-            electronic fire detection and alarm systems are designed by Licensed
+            delivering our customers the best possible value.
+            </ListGroup.Item>
+
+            <ListGroup.Item className="text-danger">
+            Our protective electronic fire detection and alarm systems are designed by Licensed
             Alarm Planning Superintendents, and certified by NICET/State
             licensed technicians. We are well versed in a wide range of
             compliance codes, and maintain close working relationships with
             Local, County, Municipal, State, and National authorities to ensure
-            that all codes and methods remain current. Readily available and
+            that all codes and methods remain current.
+            </ListGroup.Item>
+
+            <ListGroup.Item className="text-danger">
+            Readily available and
             customer oriented, we provide 24/7 service.
+            </ListGroup.Item>
+
+            </ListGroup>
           </p>
         </div>
       </section>

@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Estimator from './pages/Estimator';
 import Service from './pages/Service';
-import Contact from './pages/Contact';
+import Portfolio from './pages/Portfolio';
 import Login from './pages/login';
 import Navigation from './components/Nav';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,7 +21,7 @@ function App() {
             <Route path="/shop" element={<Shop/>} />
             <Route path="/Estimator" element={<Estimator/>} />
             <Route path="/service" element={<Service/>} />
-            <Route path="/contact" element={<Contact/>} />
+            <Route path="/portfolio" element={<Portfolio/>} />
             <Route path="/login" element={<Login/>} />
           </Routes>
         </div>

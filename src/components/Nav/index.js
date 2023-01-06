@@ -7,6 +7,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import logo from "../../assets/images/logo.jpg";
 
 const Navigation = () => {
   return (
@@ -14,12 +15,14 @@ const Navigation = () => {
       <Navbar bg="danger" variant="dark">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            PRIMARY FIRE PROTECTION
+            <img
+              src={logo}
+              className="logo"
+              alt="Primary Fire Protection Logo"
+            />
           </Navbar.Brand>
 
-          <Nav
-            className="mb-0 linksize">
-
+          <Nav className="mb-0 linksize">
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
@@ -32,8 +35,8 @@ const Navigation = () => {
             <Nav.Link as={Link} to="/Service">
               Service
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact">
-              Contact
+            <Nav.Link as={Link} to="/Portfolio">
+              Portfolio
             </Nav.Link>
             <Nav.Link as={Link} to="/login">
               Login

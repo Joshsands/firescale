@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Contact = () => {
+const Portfolio = () => {
   return (
     <div>
       THIS IS THE CONTACT PAGE
@@ -8,4 +8,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Portfolio;

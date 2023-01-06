@@ -1,8 +1,8 @@
  /* sets all margins and boarders to 0 */
  :root {
     --primary-color: #dc3545;
-    --secondary-color: black;
-    --tertiary-color: #0d6efd;
+    --secondary-color: #332D2D;
+    --tertiary-color: #54B4D3;
   }
   
    * {
@@ -107,7 +107,7 @@
   
   /* Hero Style Start */
   .hero {
-      /* background-image: url("../images/hero-bg.jpg"); */
+      background-image: url("../src/assets/images/skyline.jpg");
       background-size: cover;
       background-position: center;
       display:flex;
@@ -349,10 +349,12 @@
       background: var(--secondary-color);
       color: var(--primary-color);
       flex: 1;
+      text-align: center;
     }
   
     .trainer img {
-      width: 100%;
+      max-width: 300px;
+      max-height: 300px;
     }
     
     .trainer-bio {
@@ -471,6 +473,11 @@
     .flex-row {
       display: flex;
     }
+
+    .logo  {
+      width: 50%;
+      height: 50%;
+    }
   
     /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
   @media screen and (max-width: 980px) {
@@ -579,3 +586,4 @@
       order: 3;
     }
   }
+
