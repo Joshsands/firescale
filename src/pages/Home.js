@@ -1,5 +1,8 @@
 import * as React from "react";
 import robImage from "../assets/images/roblippman.jpg";
+import joshimage from "../assets/images/joshsands.jpg";
+import stephenimage from "../assets/images/stephenfuller.jpg";
+import briimage from "../assets/images/bri.jpg";
 
 const Home = () => {
   return (
@@ -36,7 +39,7 @@ const Home = () => {
               id="name"
               class="form-input"
             />
-            <label for="email">Enter email address"</label>
+            <label for="email">Enter email address:</label>
             <input
               type="email"
               placeholder="Email Address"
@@ -97,7 +100,7 @@ const Home = () => {
               <h3>Robert Lippman</h3>
               <h4>Co-owner / Contracts</h4>
               <h4 class="trainer-name">
-                <a href="mailto:rob@primaryfirepro.com">E-MAIL ME</a>
+                <a href="mailto:rob@primaryfirepro.com">rob@primaryfirepro.com</a>
               </h4>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
@@ -109,12 +112,12 @@ const Home = () => {
           </article>
 
           <article class="trainer">
-            <img src="./assets/images/trainer-2.jpg" alt="Stephen Fuller" />
+          <img src={stephenimage} alt="Stephen Fuller" />
             <div class="trainer-bio">
               <h3>Stephen Fuller</h3>
               <h4>Co-Owner / Service</h4>
               <h4 class="trainer-name">
-                <a href="mailto:stephen@primaryfirepro.com">E-MAIL ME</a>
+                <a href="mailto:stephen@primaryfirepro.com">stephen@primaryfirepro.com</a>
               </h4>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
@@ -126,12 +129,12 @@ const Home = () => {
           </article>
 
           <article class="trainer">
-            <img src="./assets/images/trainer-3.jpg" alt="Joshua Sands" />
+          <img src={joshimage} alt="Josh Sands" />
             <div class="trainer-bio">
               <h3 class="trainer-name">Josh Sands</h3>
               <h4 class="trainer-name">Sales / Design</h4>
               <h4 class="trainer-name">
-                <a href="mailto:josh@primaryfirepro.com">E-MAIL ME</a>
+                <a href="mailto:josh@primaryfirepro.com">josh@primaryfirepro.com</a>
               </h4>
 
               <p>
@@ -142,6 +145,25 @@ const Home = () => {
               </p>
             </div>
           </article>
+
+          <article class="trainer">
+          <img src={briimage} alt="Brehanna McMorris" />
+            <div class="trainer-bio">
+              <h3 class="trainer-name">Brehanna McMorris</h3>
+              <h4 class="trainer-name">Project Coordinator</h4>
+              <h4 class="trainer-name">
+                <a href="mailto:admin@primaryfirepro.com">admin@primaryfirepro.com</a>
+              </h4>
+
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
+                neque animi quo cupiditate commodi saepe culpa sed itaque velit
+                maiores optio dolorem excepturi aperiam dolores, voluptatibus
+                suscipit amet quis repellat!
+              </p>
+            </div>
+          </article>
+
         </div>
       </section>
 

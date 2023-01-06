@@ -1,8 +1,8 @@
  /* sets all margins and boarders to 0 */
  :root {
-    --primary-color: orangered;
+    --primary-color: #dc3545;
     --secondary-color: black;
-    --tertiary-color: blue;
+    --tertiary-color: #0d6efd;
   }
   
    * {
@@ -17,6 +17,10 @@
       font-family: Helvetica, Arial, sans-serif;
     }
   
+.linksize {
+  font-size: 1.5vw;
+}
+
     /* apply styles to <header> */
     header {
         padding: 20px 35px;
@@ -116,7 +120,7 @@
   }
   
   .hero-form {
-      background-color: orangered;
+      background-color: #dc3545;
       padding: 20px;
       color: var(--secondary-color);
       border-style: solid;
