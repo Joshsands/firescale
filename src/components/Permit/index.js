@@ -12,7 +12,7 @@ const Permit = () => {
         <Flex mx={10} mb={3}>
           <Box width={1 / 4} px={1}>
             <Label htmlFor="device">Device</Label>
-            <Input id="device" device="device" defaultValue="FACP" />
+            <Input id="device" device="device" defaultValue="Design" />
           </Box>
 
           <Box width={1 / 4} px={1}>
@@ -58,7 +58,7 @@ const Permit = () => {
         {/*row 2 */}
         <Flex mx={10} mb={3}>
           <Box width={1 / 4} px={1}>
-            <Input id="device" device="device" defaultValue="FACP" />
+            <Input id="device" device="device" defaultValue="AHJ" />
           </Box>
 
           <Box width={1 / 4} px={1}>
@@ -85,7 +85,7 @@ const Permit = () => {
         {/*row 3 */}
         <Flex mx={10} mb={3}>
           <Box width={1 / 4} px={1}>
-            <Input id="device" device="device" defaultValue="FACP" />
+            <Input id="device" device="device" defaultValue="Inspection" />
           </Box>
 
           <Box width={1 / 4} px={1}>
@@ -112,7 +112,7 @@ const Permit = () => {
         {/*row 4 */}
         <Flex mx={10} mb={3}>
           <Box width={1 / 4} px={1}>
-            <Input id="device" device="device" defaultValue="FACP" />
+            <Input id="device" device="device" defaultValue="Commissioning" />
           </Box>
 
           <Box width={1 / 4} px={1}>

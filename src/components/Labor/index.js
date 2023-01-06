@@ -12,7 +12,7 @@ const Labor = () => {
         <Flex mx={10} mb={3}>
           <Box width={1 / 4} px={1}>
             <Label htmlFor="device">Device</Label>
-            <Input id="device" device="device" defaultValue="FACP" />
+            <Input id="device" device="device" defaultValue="PM" />
           </Box>
 
           <Box width={1 / 4} px={1}>
@@ -58,7 +58,7 @@ const Labor = () => {
         {/*row 2 */}
         <Flex mx={10} mb={3}>
           <Box width={1 / 4} px={1}>
-            <Input id="device" device="device" defaultValue="FACP" />
+            <Input id="device" device="device" defaultValue="PC" />
           </Box>
 
           <Box width={1 / 4} px={1}>
@@ -85,7 +85,7 @@ const Labor = () => {
         {/*row 3 */}
         <Flex mx={10} mb={3}>
           <Box width={1 / 4} px={1}>
-            <Input id="device" device="device" defaultValue="FACP" />
+            <Input id="device" device="device" defaultValue="Technician" />
           </Box>
 
           <Box width={1 / 4} px={1}>
@@ -112,7 +112,7 @@ const Labor = () => {
         {/*row 4 */}
         <Flex mx={10} mb={3}>
           <Box width={1 / 4} px={1}>
-            <Input id="device" device="device" defaultValue="FACP" />
+            <Input id="device" device="device" defaultValue="Apprentice" />
           </Box>
 
           <Box width={1 / 4} px={1}>
