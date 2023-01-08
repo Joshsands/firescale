@@ -3,55 +3,97 @@ import { Label, Input, Select, Textarea, Radio, Checkbox } from "@rebass/forms";
 import { Box, Flex } from "rebass";
 import { Switch, Button } from 'evergreen-ui'
 
+const blank = 0;
+const FACP = 1500;
+const NAC = 500;
+const docBox = 300;
+const DACT = 200;
 
 const Estimatortool = () => {
+  
   {/* ROW 1 */}
-  const [price, setPrice] = useState(1500);
-  const [count, setCount] = useState(0);
-  const [subtotal, setSubtotal] = useState(0);
-  const [markup, setMarkup] = useState(0);
-  const [total, setTotal] = useState(0);
+  const [price1, setPrice1] = useState(0);
+  const [count1, setCount1] = useState(0);
+  const [subtotal1, setSubtotal1] = useState(0);
+  const [markup1, setMarkup1] = useState(0);
+  const [total1, setTotal1] = useState(0);
+  const [selectedOption1, setSelectedOption1] = useState(0);
+  const [markupPercent, setMarkupPercent] = useState(0.3);
 
+  function handleOptionChange1(event) {
+    let number = parseFloat(event.target.value)
+    setSelectedOption1(number)
+    setPrice1(number)
+  }
+  
   function handleClick1() {
-      setCount(count + 1);
-      setSubtotal((count + 1) * price);
-      setMarkup((subtotal + price) * 0.3);
-      setTotal((subtotal + price) + (markup +(price * 0.3)));
+    if (price1 === blank) {
+      return
     }
-
-  function minuesClick1() {
-    setCount(count - 1);
-    setSubtotal((count - 1) * price);
-    setMarkup((subtotal - price) * 0.3);
-    setTotal((subtotal - price) - (markup -(price * 0.3)))
+    else {
+    setCount1(count1 + 1);
+    setSubtotal1((count1 + 1) * price1);
+    setMarkup1((subtotal1 + price1) * markupPercent);
+    setTotal1((subtotal1 + price1) + (markup1 + (price1 * markupPercent)));
+    }
   }
 
-  const formattedSubtotal = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(subtotal);
-  const formattedMarkup = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(markup);
-  const formattedTotal= new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total);
-  const formattedPrice= new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
+  function minuesClick1() {
+    if (price1 === blank) {
+      return
+    }
+    else {
+    setCount1(count1 - 1);
+    setSubtotal1((count1 - 1) * price1);
+    setMarkup1((subtotal1 - price1) * markupPercent);
+    setTotal1((subtotal1 - price1) - (markup1 - (price1 * markupPercent)))
+    }
+  }
+
+  const formattedSubtotal = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(subtotal1);
+  const formattedMarkup = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(markup1);
+  const formattedTotal= new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total1);
+  const formattedPrice= new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price1);
 
 
   {/* ROW 2 */}
-  const [price2, setPrice2] = useState(1500);
+  const [price2, setPrice2] = useState(0);
   const [count2, setCount2] = useState(0);
   const [subtotal2, setSubtotal2] = useState(0);
   const [markup2, setMarkup2] = useState(0);
   const [total2, setTotal2] = useState(0);
+  const [selectedOption2, setSelectedOption2] = useState(0);
+
+  function handleOptionChange2(event) {
+    let number = parseFloat(event.target.value)
+    setSelectedOption2(number)
+    setPrice2(number)
+  }
 
   function handleClick2() {
+    if (price2 === blank) {
+      return
+    }
+    else {
     setCount2(count2 + 1);
     setSubtotal2((count2 + 1) * price2);
-    setMarkup2((subtotal2 + price2) * 0.3);
-    setTotal2((subtotal2 + price2) + (markup2 +(price2 * 0.3)));
+    setMarkup2((subtotal2 + price2) * markupPercent);
+    setTotal2((subtotal2 + price2) + (markup2 + (price2 * markupPercent)));
+    }
   }
 
+
   function minuesClick2() {
+    if (price2 === blank) {
+      return
+    }
+    else {
     setCount2(count2 - 1);
     setSubtotal2((count2 - 1) * price2);
-    setMarkup2((subtotal2 - price2) * 0.3);
-    setTotal2((subtotal2 - price2) - (markup2 -(price2 * 0.3)))
+    setMarkup2((subtotal2 - price2) * markupPercent);
+    setTotal2((subtotal2 - price2) - (markup2 - (price2 * markupPercent)))
   }
+}
 
 
   const formattedSubtotal2 = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(subtotal2);
@@ -61,7 +103,7 @@ const Estimatortool = () => {
 
 
   {/* TOTAL MATERIAL */}
-  const materialTotal = (total + total2)
+  const materialTotal = (total1 + total2)
   const formattedMaterialTotal= new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(materialTotal);
 
   return (
@@ -73,27 +115,34 @@ const Estimatortool = () => {
         <Flex mx={10} mb={3}>
           <Box width={1 / 4} px={1}>
             <Label htmlFor="device">Device</Label>
-            <Select id="device" device="device" defaultValue="FACP">
-        <option>FACP</option>
-        <option>NAC BOOSTER</option>
-        <option>DOC BOX</option>
-        <option>DACT</option>
+            <Select id="device" device="device" defaultValue='0' value={selectedOption1} onChange={handleOptionChange1}>
+        <option value={blank}> </option>
+        <option value={FACP}>FACP</option>
+        <option value={NAC}>NAC BOOSTER</option>
+        <option value={docBox}>DOC BOX</option>
+        <option value={DACT}>DACT</option>
         </Select>
           </Box>
 
           <Box width={1 / 4} px={1}>
             <Label htmlFor="qty">QTY</Label>
 
-            <div className="d-flex">
-            <div className="p-1">
+            <div className="d-flex flex-row">
+
+            <div className="p-0 align-self-center me-1" >
             <Button margin={0} appearance="primary" intent="success" onClick={handleClick1}>
               +</Button>
+              </div>
+
+              <div className="p-0 align-self-center me-1">
               <Button margin={0} appearance="primary" intent="danger" onClick={minuesClick1}>
               -</Button>
               </div>
-              <div className="p-0">
-              <Input id="qty" qty="qty" value={count} />
+
+              <div className="align-self-center">
+              <Input id="qty" qty="qty" value={count1} />
               </div>
+
               </div>
           </Box>
 
@@ -121,14 +170,22 @@ const Estimatortool = () => {
         {/*row 2 */}
         <Flex mx={10} mb={3}>
           <Box width={1 / 4} px={1}>
-            <Input id="device" device="device" defaultValue="FACP" />
+          <Select id="device" device="device" value={selectedOption2} onChange={handleOptionChange2}>
+        <option value={blank}> </option>
+        <option value={FACP}>FACP</option>
+        <option value={NAC}>NAC BOOSTER</option>
+        <option value={docBox}>DOC BOX</option>
+        <option value={DACT}>DACT</option>
+        </Select>
           </Box>
 
           <Box width={1 / 4} px={1}>
           <div className="d-flex flex-row">
-            <div className="p-1">
+          <div className="p-0 align-self-center me-1" >
             <Button margin={0} appearance="primary" intent="success" onClick={handleClick2}>
               +</Button>
+              </div>
+              <div className="p-0 align-self-center me-1" >
               <Button margin={0} appearance="primary" intent="danger" onClick={minuesClick2}>
               -</Button>
               </div>
