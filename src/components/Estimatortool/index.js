@@ -19,6 +19,13 @@ const Estimatortool = () => {
       setTotal((subtotal + price) + (markup +(price * 0.3)));
     }
 
+  function minuesClick1() {
+    setCount(count - 1);
+    setSubtotal((count - 1) * price);
+    setMarkup((subtotal - price) * 0.3);
+    setTotal((subtotal - price) - (markup -(price * 0.3)))
+  }
+
   const formattedSubtotal = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(subtotal);
   const formattedMarkup = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(markup);
   const formattedTotal= new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(total);
@@ -38,6 +45,14 @@ const Estimatortool = () => {
     setMarkup2((subtotal2 + price2) * 0.3);
     setTotal2((subtotal2 + price2) + (markup2 +(price2 * 0.3)));
   }
+
+  function minuesClick2() {
+    setCount2(count2 - 1);
+    setSubtotal2((count2 - 1) * price2);
+    setMarkup2((subtotal2 - price2) * 0.3);
+    setTotal2((subtotal2 - price2) - (markup2 -(price2 * 0.3)))
+  }
+
 
   const formattedSubtotal2 = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(subtotal2);
   const formattedMarkup2 = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(markup2);
@@ -69,10 +84,12 @@ const Estimatortool = () => {
           <Box width={1 / 4} px={1}>
             <Label htmlFor="qty">QTY</Label>
 
-            <div className="d-flex flex-row">
+            <div className="d-flex">
             <div className="p-1">
             <Button margin={0} appearance="primary" intent="success" onClick={handleClick1}>
               +</Button>
+              <Button margin={0} appearance="primary" intent="danger" onClick={minuesClick1}>
+              -</Button>
               </div>
               <div className="p-0">
               <Input id="qty" qty="qty" value={count} />
@@ -112,6 +129,8 @@ const Estimatortool = () => {
             <div className="p-1">
             <Button margin={0} appearance="primary" intent="success" onClick={handleClick2}>
               +</Button>
+              <Button margin={0} appearance="primary" intent="danger" onClick={minuesClick2}>
+              -</Button>
               </div>
               <div className="p-0">
 
